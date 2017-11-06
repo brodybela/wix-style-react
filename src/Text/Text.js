@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import WixComponent from '../BaseComponents/WixComponent';
 import classNames from 'classnames';
+
+import WixComponent from '../BaseComponents/WixComponent';
 import typography, {convertFromUxLangToCss} from '../Typography';
 import styles from './styles.scss';
 
@@ -61,16 +62,6 @@ export default class extends WixComponent {
       .filter(({candidates}) => candidates.indexOf(appearance) !== -1)
       .reduceRight((acc, {type}) => type, 'span');
 
-  getClassNames = appearance =>
-    [
-      {className: styles.headingDefaults, candidates: ['H0', 'H1', 'H2', 'H2.1', 'H3', 'H4']}
-    ]
-      .filter(({candidates}) => candidates.indexOf(appearance) !== -1)
-      .reduce((acc, {className}) =>
-        acc.concat(className),
-        [typography[convertFromUxLangToCss(appearance)]])
-      .join(' ');
-
   render() {
     const {appearance, ellipsis, children} = this.props;
 
@@ -78,10 +69,13 @@ export default class extends WixComponent {
       this.getType(appearance),
       {
         title: this.getTitle(),
-        className: classNames({
-          [this.getClassNames(appearance)]: true,
-          [styles.ellipsis]: ellipsis
-        })
+        className: classNames(
+          typography[convertFromUxLangToCss(appearance)],
+          {
+            [styles.headingDefaults]: ['H0', 'H1', 'H2', 'H2.1', 'H3', 'H4'].indexOf(appearance) > -1,
+            [styles.ellipsis]: ellipsis
+          }
+        )
       },
       children
     );
