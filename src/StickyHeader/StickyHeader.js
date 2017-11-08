@@ -1,11 +1,14 @@
 import './StickyHeader.scss';
 import throttle from 'lodash/throttle';
-import React from 'React';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import WixComponent from '../BaseComponents/WixComponent';
 
-class StickyHeader extends WixComponent {
+/**
+  * A header that sticks at the top of the container which minimizes on scroll
+  */
+export default class StickyHeader extends WixComponent {
   constructor(props) {
     super(props);
 
@@ -77,9 +80,14 @@ class StickyHeader extends WixComponent {
 StickyHeader.displayName = 'StickyHeader';
 
 StickyHeader.propTypes = {
-  scrollContainerClass: PropTypes.string,
+    /** The container class where the scroll will occur  */
+  scrollContainerClass: PropTypes.string.isRequired,
+  /** Breadcrumbs object to display */
   breadCrumbs: PropTypes.element,
+  /** Should display a back button */
   displayBack: PropTypes.bool
 };
 
-export default StickyHeader;
+StickyHeader.defaultProps = {
+  displayBack: false
+};
