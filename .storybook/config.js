@@ -6,6 +6,8 @@ function loadStories() {
     require('./e2e-styles.scss');
   }
 
+  require('highlight.js/styles/github.css');
+  require('github-markdown-css/github-markdown.css');
   require('../stories/stories.scss');
   require('./stories');
 }
