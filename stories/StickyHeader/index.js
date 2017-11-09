@@ -1,21 +1,30 @@
 import React from 'react';
-import {storiesOf} from '@storybook/react';
-import AutoDocs from '../utils/Components/AutoDocs';
-import CodeExample from '../utils/Components/CodeExample';
-import StickyHeaderSource from '!raw-loader!wix-style-react/StickyHeader/StickyHeader';
 
-import StickyHeaderExample from './DefaultStickyHeader';
-import StickyHeaderExampleRaw from '!raw-loader!./DefaultStickyHeader';
+import story from '../utils/Components/Story';
 
-storiesOf('Core', module)
-.add('StickyHeader', () => (
-  <div>
-    <AutoDocs source={StickyHeaderSource}/>
+import Breadcrumbs from 'wix-style-react/Breadcrumbs';
+import styles from './StickyHeader.scss';
 
-    <h1>Usage examples</h1>
-
-    <CodeExample title="Standard" code={StickyHeaderExampleRaw}>
-      <StickyHeaderExample/>
-    </CodeExample>
-  </div>
-));
+story({
+  category: 'Core',
+  componentSrcFolder: 'StickyHeader',
+  componentProps: {
+    scrollContainerClass: styles.container,
+    title: 'This is a title',
+    breadCrumbs: <Breadcrumbs
+      items={[
+        {id: '1', value: 'First item'},
+        {
+          id: '2',
+          value: 'Linked item',
+          link: 'http://www.wix.com'
+        },
+        {id: '3', value: 'Third item'}
+      ]}
+      activeId="1"
+      size="medium"
+      theme="onGrayBackground"
+      />,
+    children: <div styles={{height: '1500px'}}>Looong content!</div>
+  }
+});
