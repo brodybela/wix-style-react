@@ -1,5 +1,4 @@
-import './StickyHeader.scss';
-import throttle from 'lodash/throttle';
+import s from './StickyHeader.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -12,26 +11,27 @@ export default class StickyHeader extends WixComponent {
   constructor(props) {
     super(props);
 
-    this.handleScroll = throttle(this.handleScroll.bind(this), 50);
+    this.handleScroll = this.handleScroll.bind(this);
     const minimized = this.shouldBeMinimized();
-    this.state = {minimized};
+    this.state = {
+      minimized,
+      top: 0
+    };
   }
 
   render() {
     const {breadCrumbs, displayBack} = this.props;
-    const {minimized} = this.state;
-    const classes = {minimized};
+    const {minimized, top} = this.state;
+    const classes = {[s.minimized]: minimized};
 
     return (
-      <div className={classNames('sticky-header-container', classes)} >
-        <div className="overlay"/>
-        <div className="header-row">
-          <div className="sticky-header">
-            {breadCrumbs}
-            <div className={`wix-title wix-header-title${displayBack ? ' space' : ''}`}>
-              {displayBack && <section className="section-container">{this.renderBackIcon()}</section>}
-              {this.getTitle()}
-            </div>
+      <div className={classNames(s.stickyHeaderContainer, classes)} >
+        <div className={s.overlay} style={{transform: `translateY(${top}px)`}}/>
+        <div className={s.headerRow} style={{transform: `translateY(${top}px)`}}>
+          {breadCrumbs}
+          <div className={classNames(s.wixHeaderTitle, {[s.space]: displayBack})}>
+            {displayBack && <section className={s.sectionContainer}>{this.renderBackIcon()}</section>}
+            {this.getTitle()}
           </div>
         </div>
       </div>
@@ -52,28 +52,43 @@ export default class StickyHeader extends WixComponent {
     return document.querySelector(`.${scrollContainerClass}`);
   }
 
+  getContainerTop() {
+    const container = this.getScrollContainer();
+    return (container && container.scrollTop) || 0;
+  }
+
   componentDidMount() {
     super.componentDidMount();
-    this.getScrollContainer().addEventListener('scroll', this.handleScroll);
+
+    const container = this.getScrollContainer();
+    console.log(container);
+    container && container.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
-    this.getScrollContainer().removeEventListener('scroll', this.handleScroll);
     super.componentWillUnmount();
+
+    const container = this.getScrollContainer();
+    container && container.getScrollContainer().removeEventListener('scroll', this.handleScroll);
   }
 
-  shouldBeMinimized() {
+  shouldBeMinimized(containerTop) {
     const scrollTopThreshold = 24;
-    const scrollTop = this.getScrollContainer().scrollTop;
-    return scrollTop > scrollTopThreshold;
+    return containerTop > scrollTopThreshold;
   }
 
   handleScroll() {
-    const nextMinimized = this.shouldBeMinimized();
+    const containerTop = this.getContainerTop();
+    const nextMinimized = this.shouldBeMinimized(containerTop);
+    const newState = {
+      top: containerTop
+    };
 
     if (this.state.minimized !== nextMinimized) {
-      this.setState({minimized: nextMinimized});
+      newState.minimized = nextMinimized;
     }
+
+    this.setState(newState);
   }
 }
 
@@ -85,7 +100,9 @@ StickyHeader.propTypes = {
   /** Breadcrumbs object to display */
   breadCrumbs: PropTypes.element,
   /** Should display a back button */
-  displayBack: PropTypes.bool
+  displayBack: PropTypes.bool,
+  /** Title to display */
+  title: PropTypes.string
 };
 
 StickyHeader.defaultProps = {
