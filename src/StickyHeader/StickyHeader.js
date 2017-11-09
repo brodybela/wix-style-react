@@ -28,10 +28,14 @@ export default class StickyHeader extends WixComponent {
       <div className={classNames(s.stickyHeaderContainer, classes)} >
         <div className={s.overlay} style={{transform: `translateY(${top}px)`}}/>
         <div className={s.headerRow} style={{transform: `translateY(${top}px)`}}>
-          {breadCrumbs}
-          <div className={classNames(s.wixHeaderTitle, {[s.space]: displayBack})}>
-            {displayBack && <section className={s.sectionContainer}>{this.renderBackIcon()}</section>}
-            {this.getTitle()}
+          <div className={s.StickyHeader}>
+            <div className={s.breadcrumbs}>
+              {breadCrumbs}
+            </div>
+            <div className={classNames(s.wixHeaderTitle, {[s.space]: displayBack})}>
+              {displayBack && <section className={s.sectionContainer}>{this.renderBackIcon()}</section>}
+              {this.getTitle()}
+            </div>
           </div>
         </div>
       </div>
@@ -61,7 +65,6 @@ export default class StickyHeader extends WixComponent {
     super.componentDidMount();
 
     const container = this.getScrollContainer();
-    console.log(container);
     container && container.addEventListener('scroll', this.handleScroll);
   }
 

@@ -2,10 +2,29 @@
 import React from 'react';
 import {StickyHeader} from 'wix-style-react';
 import styles from './StickyHeader.scss';
+import Breadcrumbs from '../../src/Breadcrumbs/Breadcrumbs';
+
+const getBreadcrumbs = () => (
+  <Breadcrumbs
+    items={[{id: '1', value: 'First item'}, {
+      id: '2',
+      value: 'Linked item',
+      link: 'http://www.wix.com'
+    }, {id: '3', value: 'Third item'}]}
+    activeId="1"
+    size="medium"
+    theme="onGrayBackground"
+    onClick={() => {
+    }}
+    />);
 
 export default () => (
   <div className={styles.container}>
-    <StickyHeader scrollContainerClass={styles.container} title="This is a title">Default</StickyHeader>&nbsp;
+    <StickyHeader
+      scrollContainerClass={styles.container}
+      title="This is a title"
+      breadCrumbs={getBreadcrumbs()}
+      />
     <div className={styles.content}>
       {[...Array(5)].map((x, i) =>
         <div key={i}>
