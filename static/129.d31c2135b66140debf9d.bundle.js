@@ -1,0 +1,1 @@
+webpackJsonp([129],{1983:function(module,exports){module.exports="import React from 'react';\nimport {node} from 'prop-types';\n\nconst Prefix = ({children}) => <span style={{paddingRight: '10px'}}>{children}</span>;\n\nPrefix.propTypes = {\n  children: node.isRequired\n};\n\nPrefix.displayName = 'Button.Prefix';\n\nexport default Prefix;\n"}});

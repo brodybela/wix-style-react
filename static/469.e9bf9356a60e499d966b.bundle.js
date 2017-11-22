@@ -1,0 +1,1 @@
+webpackJsonp([469],{1643:function(module,exports){module.exports="const highlighterDriverFactory = component => ({\n  getElement: () => component,\n  html: () => component.getAttribute('innerHTML')\n});\n\nexport default highlighterDriverFactory;\n"}});

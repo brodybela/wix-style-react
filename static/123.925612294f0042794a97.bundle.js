@@ -1,0 +1,1 @@
+webpackJsonp([123],{1989:function(module,exports){module.exports="export const input = {\n  paaing: '0 0',\n  display: 'block',\n  backgroundColor: 'transparent',\n\n  hover: {\n    backgroundColor: 'transparent'\n  }\n};\n\nexport const core = {};\n"}});

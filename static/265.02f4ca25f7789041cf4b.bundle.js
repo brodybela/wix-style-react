@@ -1,0 +1,1 @@
+webpackJsonp([265],{1847:function(module,exports){module.exports="import PropTypes from 'prop-types';\n\nconst Header = props => props.children;\nHeader.displayName = 'Page.Header';\nHeader.propTypes = {children: PropTypes.element.isRequired};\nexport default Header;\n"}});

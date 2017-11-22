@@ -1,0 +1,1 @@
+webpackJsonp([905],{3873:function(module,exports){module.exports=".suffix {\n    padding: 0 0 0 10px;\n}\n\n.prefix {\n    padding: 0 10px 0 0;\n}\n\n:global(.rtl) .prefix {\n    padding: 0 0 0 10px;\n}\n\n:global(.rtl) .suffix {\n    padding: 0 10px 0 0;\n}\n"}});

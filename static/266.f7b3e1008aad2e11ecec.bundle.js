@@ -1,0 +1,1 @@
+webpackJsonp([266],{1846:function(module,exports){module.exports="import PropTypes from 'prop-types';\n\nconst Content = props => props.children;\nContent.displayName = 'Page.Content';\nContent.propTypes = {children: PropTypes.element.isRequired};\nexport default Content;\n"}});

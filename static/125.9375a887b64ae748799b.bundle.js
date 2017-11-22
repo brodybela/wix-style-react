@@ -1,0 +1,1 @@
+webpackJsonp([125],{1987:function(module,exports){module.exports="import React from 'react';\nimport {object} from 'prop-types';\n\nexport default class Input extends React.Component {\n  static propTypes = {\n    classes: object.isRequired\n  }\n\n  render() {\n    return (\n      <input className={this.props.classes.input}/>\n    );\n  }\n}\n\n"}});

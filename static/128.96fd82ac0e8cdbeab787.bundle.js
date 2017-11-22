@@ -1,0 +1,1 @@
+webpackJsonp([128],{1984:function(module,exports){module.exports="import React from 'react';\nimport {node} from 'prop-types';\n\nconst Suffix = ({children}) => <span style={{paddingLeft: '10px'}}>{children}</span>;\n\nSuffix.propTypes = {\n  children: node.isRequired\n};\n\nSuffix.displayName = 'Button.Suffix';\n\nexport default Suffix;\n"}});

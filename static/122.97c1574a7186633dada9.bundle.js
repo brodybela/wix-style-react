@@ -1,0 +1,1 @@
+webpackJsonp([122],{1990:function(module,exports){module.exports="import jss from 'jss';\nimport preset from 'jss-preset-default';\n\njss.setup(preset());\n\nconst atachStyleSheetToDom = styles => jss.createStyleSheet(styles).attach();\n\nexport const generateClasses = styles => {\n  const {classes} = atachStyleSheetToDom(styles);\n  return classes;\n};\n"}});

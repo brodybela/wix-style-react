@@ -1,0 +1,1 @@
+webpackJsonp([121],{1991:function(module,exports){module.exports="import React from 'react';\n\nexport const withTheme = (Component, theme) =>\n  React.cloneElement(Component, {theme});\n"}});

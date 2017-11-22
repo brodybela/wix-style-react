@@ -1,0 +1,1 @@
+webpackJsonp([747],{4031:function(module,exports){module.exports="@import '../../common.scss';\n\n.footer > * {\n  padding: 0;\n}\n"}});

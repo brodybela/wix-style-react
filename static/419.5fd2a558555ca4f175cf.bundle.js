@@ -1,0 +1,1 @@
+webpackJsonp([419],{1693:function(module,exports){module.exports="import React from 'react';\nimport Icon from '../Icon';\n\n/*eslint-disable */\nconst Info3 = (props) => (\n  <Icon viewBox=\"0 0 24 24\" {...props}>\n    <g>\n      <path d=\"M11 9h2V7h-2v2zm0 1l-1 2h1v3l-1 1v1h4v-1l-1-1v-5h-2z\" />\n    </g>\n  </Icon>\n);\n/*eslint-enable */\n\nexport default Info3;\n"}});
