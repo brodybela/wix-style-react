@@ -112,3 +112,5 @@ import '../stories/Modal';
 
 // 11. Pickers and Selectors
 import '../stories/ColorPicker'; // 11.5 Color Picker
+
+import '../stories/StatsWidget';

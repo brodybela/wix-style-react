@@ -10,6 +10,7 @@ const headerDriverFactory = ({element, wrapper, component}) => {
     exists: () => !!element,
     title: () => title && title.innerHTML,
     subtitle: () => subtitle && subtitle.innerHTML,
+    suffixElement: () => element.querySelector('[data-hook="suffix"]'),
     setProps: props => {
       const ClonedWithProps = React.cloneElement(component, Object.assign({}, component.props, props), ...(component.props.children || []));
       ReactDOM.render(<div ref={r => element = r}>{ClonedWithProps}</div>, wrapper);
