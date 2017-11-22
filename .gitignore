@@ -20,4 +20,5 @@ yarn.lock
 # files that appear in root after build
 /*.js
 !wallaby.js
+!postcss.config.js
 !protractor.conf.js
