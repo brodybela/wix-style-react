@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import WixComponent from '../BaseComponents/WixComponent';
 import omit from 'lodash/omit';
 import DropdownLayout from '../DropdownLayout/DropdownLayout';
-import styles from './LinkWithOptions.scss';
+import styles from './TextLinkWithOptions.scss';
 import classNames from 'classnames';
 
-class LinkWithOptions extends WixComponent {
+class TextLinkWithOptions extends WixComponent {
   constructor(props) {
     super(props);
     this.state = {showOptions: false};
@@ -38,10 +38,10 @@ class LinkWithOptions extends WixComponent {
     const style = {width: dropdownProps.dropdownWidth};
 
     return (
-      <div className={classes} style={style} data-hook="linkWithOptions-dropdownLayout-wrapper">
+      <div className={classes} style={style} data-hook="textLinkWithOptions-dropdownLayout-wrapper">
         <DropdownLayout
           {...dropdownProps}
-          dataHook="linkWithOptions-dropdownLayout"
+          dataHook="textLinkWithOptions-dropdownLayout"
           options={dropdownLayoutOptions}
           visible={this.state.showOptions}
           onSelect={(option, isSelectedOption) => this.onSelect(option, isSelectedOption)}
@@ -85,22 +85,22 @@ class LinkWithOptions extends WixComponent {
   }
 }
 
-LinkWithOptions.defaultProps = {
+TextLinkWithOptions.defaultProps = {
   ...DropdownLayout.defaultProps,
   onSelect: () => {},
   dropdownWidth: '130px',
   withArrow: true
 };
 
-LinkWithOptions.propTypes = {
+TextLinkWithOptions.propTypes = {
   ...DropdownLayout.propTypes,
   children: PropTypes.array.isRequired
 };
 
-LinkWithOptions.Option = () => null;
-LinkWithOptions.Option.displayName = 'LinkWithOptions.Option';
+TextLinkWithOptions.Option = () => null;
+TextLinkWithOptions.Option.displayName = 'TextLinkWithOptions.Option';
 
-LinkWithOptions.Link = props => <div {...props}/>;
-LinkWithOptions.Link.displayName = 'LinkWithOptions.Link';
+TextLinkWithOptions.Link = props => <div {...props}/>;
+TextLinkWithOptions.Link.displayName = 'TextLinkWithOptions.Link';
 
-export default LinkWithOptions;
+export default TextLinkWithOptions;

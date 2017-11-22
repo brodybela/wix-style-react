@@ -189,8 +189,8 @@ export const modalSelectorTestkitFactory = enzymeTestkitFactoryCreator(modalSele
 import iconWithOptionsDriverFactory from '../src/IconWithOptions/IconWithOptions.driver';
 export const iconWithOptionsTestkitFactory = enzymeTestkitFactoryCreator(iconWithOptionsDriverFactory);
 
-import linkWithOptionsDriverFactory from '../src/LinkWithOptions/LinkWithOptions.driver';
-export const linkWithOptionsTestkitFactory = enzymeTestkitFactoryCreator(linkWithOptionsDriverFactory);
+import textLinkWithOptionsDriverFactory from '../src/TextLinkWithOptions/TextLinkWithOptions.driver';
+export const textLinkWithOptionsTestkitFactory = enzymeTestkitFactoryCreator(textLinkWithOptionsDriverFactory);
 
 import searchDriverFactory from '../src/Search/Search.driver';
 export const searchTestkitFactory = enzymeTestkitFactoryCreator(searchDriverFactory);

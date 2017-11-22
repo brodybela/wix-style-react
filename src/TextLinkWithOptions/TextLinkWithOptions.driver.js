@@ -2,10 +2,10 @@ import dropdownLayoutDriverFactory from '../DropdownLayout/DropdownLayout.driver
 import ReactTestUtils from 'react-dom/test-utils';
 import {isClassExists} from '../../test/utils';
 
-const LinkWithOptionsDriverFactory = ({element, wrapper}) => {
+const TextLinkWithOptionsDriverFactory = ({element, wrapper}) => {
   const linkWrapper = element.querySelector('[data-hook=link-wrapper]');
-  const dropdownLayoutWrapper = element.querySelector('[data-hook=linkWithOptions-dropdownLayout-wrapper]');
-  const dropdownLayout = element.querySelector('[data-hook=linkWithOptions-dropdownLayout]');
+  const dropdownLayoutWrapper = element.querySelector('[data-hook=textLinkWithOptions-dropdownLayout-wrapper]');
+  const dropdownLayout = element.querySelector('[data-hook=textLinkWithOptions-dropdownLayout]');
   const dropdownLayoutDriver = dropdownLayoutDriverFactory({element: dropdownLayout, wrapper});
 
   const driver = {
@@ -26,4 +26,4 @@ const LinkWithOptionsDriverFactory = ({element, wrapper}) => {
   };
 };
 
-export default LinkWithOptionsDriverFactory;
+export default TextLinkWithOptionsDriverFactory;

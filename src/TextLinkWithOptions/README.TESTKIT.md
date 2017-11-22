@@ -1,4 +1,4 @@
-## LinkWithOptions TestKit API
+## TextLinkWithOptions TestKit API
 
 #### Protractor test kit:
 
@@ -17,21 +17,21 @@
 > E2E example
 ```javascript
   //Element should be rendered with a data-hook into the DOM
-  <LinkWithOptions dataHook="myDataHook">
-    <LinkWithOptions.Link><Image size="30"/></LinkWithOptions.Link>
-    <LinkWithOptions.Option id="1">Option 1</LinkWithOptions.Option>
-    <LinkWithOptions.Option id="2">Option 2</LinkWithOptions.Option>
-    <LinkWithOptions.Option id="3">Option 3</LinkWithOptions.Option>
-  </LinkWithOptions>
+  <TextLinkWithOptions dataHook="myDataHook">
+    <TextLinkWithOptions.Link><Image size="30"/></TextLinkWithOptions.Link>
+    <TextLinkWithOptions.Option id="1">Option 1</TextLinkWithOptions.Option>
+    <TextLinkWithOptions.Option id="2">Option 2</TextLinkWithOptions.Option>
+    <TextLinkWithOptions.Option id="3">Option 3</TextLinkWithOptions.Option>
+  </TextLinkWithOptions>
 
   /**********************
    Protractor example
   **********************/
 
-  import {linkWithOptionsTestkitFactory, waitForVisibilityOf} from 'wix-style-react/dist/testkit/protractor';
+  import {textLinkWithOptionsTestkitFactory, waitForVisibilityOf} from 'wix-style-react/dist/testkit/protractor';
 
   //Create an element testkit via the data-hook attribute
-  const testkit = linkWithOptionsTestkitFactory({dataHook: 'myDataHook'});
+  const testkit = textLinkWithOptionsTestkitFactory({dataHook: 'myDataHook'});
 
   browser.get(appUrl);  //Your application url
 

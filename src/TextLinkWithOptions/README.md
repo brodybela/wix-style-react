@@ -1,4 +1,4 @@
-# LinkWithOptions component
+# TextLinkWithOptions component
 
 > Link with dropdown
 
@@ -9,6 +9,6 @@
 | onSelect | func | noop | - | Callback when the user selects one of the selections. Called with the selection. |
 | ***All of the DropdownLayout Props are also available for this component*** | | | | |
 
-> LinkWithOptions.Link - the Link component to be used
+> TextLinkWithOptions.Link - the Link component to be used
 
-> LinkWithOptions.Option - an option to be used for the dropdown - must contain an id
+> TextLinkWithOptions.Option - an option to be used for the dropdown - must contain an id

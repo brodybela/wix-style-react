@@ -99,8 +99,8 @@ export const editableSelectorTestkitFactory = protractorTestkitFactoryCreator(ed
 import iconWithOptionsDriverFactory from '../src/IconWithOptions/IconWithOptions.protractor.driver';
 export const iconWithOptionsTestkitFactory = protractorTestkitFactoryCreator(iconWithOptionsDriverFactory);
 
-import linkWithOptionsDriverFactory from '../src/LinkWithOptions/LinkWithOptions.protractor.driver';
-export const linkWithOptionsTestkitFactory = protractorTestkitFactoryCreator(linkWithOptionsDriverFactory);
+import textLinkWithOptionsDriverFactory from '../src/TextLinkWithOptions/TextLinkWithOptions.protractor.driver';
+export const textLinkWithOptionsTestkitFactory = protractorTestkitFactoryCreator(textLinkWithOptionsDriverFactory);
 
 import searchDriverFactory from '../src/Search/Search.protractor.driver';
 export const searchTestkitFactory = protractorTestkitFactoryCreator(searchDriverFactory);
